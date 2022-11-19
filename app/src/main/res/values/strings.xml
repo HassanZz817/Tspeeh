@@ -3,4 +3,9 @@
     <string name="click">Click</string>
     <string name="_1">1</string>
     <string name="استغفر_الله">استغفر الله</string>
+    <string name="سبحان_الله">سبحان الله</string>
+        <string name="الحمدلله">الحمد الله</string>
+        <string name="لا_اله_الا_الله">لا اله الا الله</string>
+
+
 </resources>
