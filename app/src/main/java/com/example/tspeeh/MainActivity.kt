@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
+    lateinit var tabLayout: TabLayout
     lateinit var btn : Button
     lateinit var counter : TextView
     lateinit var textView: TextView
@@ -17,35 +19,39 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-<<<<<<< Updated upstream
 
         connectViews()
+        prepareTabs()
 
 
     }
     private fun connectViews(){
-        val btn = findViewById<Button>(R.id.btn)
-        val texts = listOf(
-            R.string.سبحان_الله,
-            R.string.استغفر_الله,
-            R.string.لا_اله_الا_الله,
-            R.string.الحمدلله
+       tabLayout = findViewById(R.id.tabLayout)
+        viewPager = findViewById(R.id.viewPager)
+        btn = findViewById(R.id.btn1)
 
-        )
-      val adapter = ViewPagerAdapter(texts,btn)
-        viewPager.adapter = adapter
-=======
-        val btn = findViewById<Button>(R.id.btn1)
         var timesClicked = 0
-        val textView = findViewById<TextView>(R.id.textView)
->>>>>>> Stashed changes
-        val coutner = findViewById<TextView>(R.id.counter)
+        val counter = findViewById<TextView>(R.id.counter)
 
         btn.setOnClickListener{
             timesClicked += 1
 
-            coutner.text = timesClicked.toString()
+            counter.text = timesClicked.toString()
         }
     }
+
+    private fun prepareTabs(){
+
+        val fragmentAdapter:FragmentAdapter = FragmentAdapter(supportFragmentManager,lifecycle)
+        fragmentAdapter.addFragment(Firstfragment(),"الاول", button = btn,counter)
+        fragmentAdapter.addFragment(Seconed(),"الثاني", button = btn,counter)
+
+        viewPager.adapter = fragmentAdapter
+        TabLayoutMediator(tabLayout!!,viewPager!!){
+            tab,position -> tab.text = fragmentAdapter.fragmentTitles[position]
+
+        }.attach()
+    }
+
 
 }

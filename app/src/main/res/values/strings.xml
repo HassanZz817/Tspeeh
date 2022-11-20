@@ -4,8 +4,10 @@
     <string name="_1">1</string>
     <string name="استغفر_الله">استغفر الله</string>
     <string name="سبحان_الله">سبحان الله</string>
-        <string name="الحمدلله">الحمد الله</string>
-        <string name="لا_اله_الا_الله">لا اله الا الله</string>
+    <string name="الحمدلله">الحمد الله</string>
+    <string name="لا_اله_الا_الله">لا اله الا الله</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
