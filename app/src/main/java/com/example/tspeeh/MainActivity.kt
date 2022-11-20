@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+<<<<<<< Updated upstream
 
         connectViews()
 
@@ -33,6 +34,11 @@ class MainActivity : AppCompatActivity() {
         )
       val adapter = ViewPagerAdapter(texts,btn)
         viewPager.adapter = adapter
+=======
+        val btn = findViewById<Button>(R.id.btn1)
+        var timesClicked = 0
+        val textView = findViewById<TextView>(R.id.textView)
+>>>>>>> Stashed changes
         val coutner = findViewById<TextView>(R.id.counter)
 
         btn.setOnClickListener{
