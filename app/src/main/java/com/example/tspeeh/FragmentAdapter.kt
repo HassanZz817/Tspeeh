@@ -21,10 +21,8 @@ class FragmentAdapter(fragmentManager: FragmentManager,lifecycle: Lifecycle)
     override fun createFragment(position: Int): Fragment {
        return fragmentList.get(position)
     }
-    fun addFragment(fragment: Fragment, title: String, button: Button,counter: TextView){
+    fun addFragment(fragment: Fragment, title: String){
         fragmentList.add(fragment)
         fragmentTitles.add(title)
-        fragmentButton = button
-        this.counter = counter
     }
 }

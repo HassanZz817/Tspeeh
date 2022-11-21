@@ -36,6 +36,20 @@ class Seconed : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_seconed, container, false)
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        btn = view.findViewById(R.id.btn1)
+        counter = view.findViewById(R.id.counter)
+
+        var timesClicked = 0
+        btn.setOnClickListener{
+            timesClicked += 1
+
+            counter.text = timesClicked.toString()
+        }
+    }
+
 
     companion object {
         /**
